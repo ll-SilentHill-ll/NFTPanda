@@ -1,0 +1,789 @@
+.conteiner {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0px auto;
+}
+
+
+.header__menu {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .header__logo a {
+    display: flex;
+    align-items: center;
+    max-height: 40px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 32px;
+    img {
+      margin-right: 10px;
+    }
+  }
+}
+
+.header__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  a {
+    text-decoration: none;
+    color: #ADB9C7;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 32px;
+    transition: 0.3s;
+
+  }
+
+
+  li {
+    margin-right: 32px;
+    position: relative;
+    .li_line {
+      position: absolute;
+      bottom: 0px;
+      width: 0px;
+      height: 2px;
+      background-color: blue;
+      visibility: hidden;
+      transition: 0.3s;
+    }
+  }
+}
+
+li:hover {
+  a {
+    color: #fff;
+    transition: 0.3s;
+  }
+
+  .li_line {
+    width: 40px;
+    visibility: visible;
+    transition: 0.3s;
+  }
+}
+
+.header__button {
+  p {
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 32px;
+    color: #fff;
+    width: 175px;
+    padding: 12px 24.5px;
+    border-radius: 12px;
+    border: 1px solid blue;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+
+  p:hover {
+    background-color: blue;
+    transition: 0.3s;
+  }
+}
+
+.item-card {
+  position: relative;
+  max-width: 400px;
+  width: 100%;
+  max-height: 536px;
+  height: 100%;
+  border-radius: 24px;
+  background-color: #272D37;
+}
+
+.item_content {
+  max-width: 352px;
+  margin: auto;
+  padding-top: 24px;
+
+  .card__img {
+    margin-bottom: 24px;
+  }
+
+  .item_name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h3 {
+      font-size: 22px;
+      font-weight: 700;
+      font-family: 'Urbanist', sans-serif;
+      line-height: 31.647px;
+      color: #fff;
+    }
+
+    span {
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 22px;
+      letter-spacing: 1.4px;
+      color: #fff;
+      background-color: blue;
+      padding: 2px 15px;
+      border-radius: 8px;
+    }
+  }
+}
+
+.creator-nft_card {
+  display: flex;
+  align-items: center;
+
+  p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #8F9CA9;
+  }
+
+  span {
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px;
+  }
+
+  img {
+    margin-right: 16px;
+  }
+}
+
+.creator-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 24px;
+  padding-top: 24px;
+}
+
+.nft-card_bid p {
+  text-align: right;
+}
+
+.nft-card_bid {
+  p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #8F9CA9;
+  }
+
+  span {
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px;
+  }
+}
+
+.img__block {
+  position: relative;
+}
+
+.sale_timer {
+  background-color: #0F182E;
+  display: flex;
+  position: absolute;
+  bottom: 48px;
+  max-width: 192px;
+  width: 100%;
+  align-items: center;
+  padding: 8px 21px;
+  border-radius: 16px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  font-size: 14px;
+  font-weight: 800;
+  font-family: 'Roboto', sans-serif;
+
+
+  span {
+    color: #fff;
+    margin-left: 8px;
+  }
+}
+
+section {
+  .conteiner {
+    margin-top: 77px;
+    display: flex;
+  }
+}
+
+.header-block_text {
+  max-width: 630px;
+  margin-right: 48px;
+  margin-top: 80px;
+  h1 {
+    color: #fff;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 80px;
+  }
+
+  p {
+    color: #ADB9C7;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 32px;
+    max-width: 525px;
+    margin-bottom: 40px;
+  }
+}
+
+.block-text_button {
+  padding: 16px 41.5px;
+  border-radius: 12px;
+  background-color: blue;
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px; /* 200% */
+  text-decoration: none;
+  border: 1px solid blue;
+  transition: 0.3s;
+}
+
+.block-text_button:hover {
+  background-color: transparent;
+  transition: 0.3s;
+}
+
+.item-card_next {
+  position: absolute;
+  height: 400px;
+  right: 0px;
+  top: 0px;
+  right: -427px;
+}
+
+
+.cryptowallet {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  margin-bottom: 160px;
+  align-items: center;
+
+  .wallet_logo {
+    width: 207px;
+    text-align: center;
+  }
+}
+
+.yoursteps h2 {
+  margin: auto;
+  color: #fff;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 63.984px; /* 133.3% */
+  text-transform: capitalize;
+  max-width: 583px;
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.stepblock {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  gap:30px;
+  margin-bottom: 160px;
+
+  .block__card {
+    background-color: #272D37;
+    padding: 0px 32px;
+    border-radius: 12px;
+    position: relative;
+    border:1px solid;
+    transition: 0.3s;
+  }
+
+  .block__card:hover{
+    border:1px solid #ADB9C7;
+    transition: 0.3s;
+  }
+
+  img {
+    padding: 23px;
+    background-color: blue;
+    border-radius: 90px;
+    margin-top: 56px;
+    margin-bottom: 48px;
+  }
+
+  p {
+    padding-bottom: 56px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 171.429% */
+    color: #ADB9C7;
+  }
+
+  h3 {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px; /* 133.333% */
+    text-transform: capitalize;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+
+
+
+}
+
+.conteiner-live {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.title-block {
+  max-width: 1200px;
+  margin-bottom: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h3 {
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 63.984px; /* 133.3% */
+    text-transform: capitalize;
+    color: #fff;
+  }
+
+  a {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px; /* 200% */
+    text-transform: capitalize;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 46px;
+    border-radius: 12px;
+    border: 2px solid #1E50FF;
+    transition: 0.3s;
+  }
+
+  a:hover{
+    transition: 0.3s;
+    background-color: blue;
+  }
+}
+
+.auction_card {
+  display: flex;
+  justify-content: space-between;
+  gap:24px;
+
+  .item_content {
+    margin: 0px auto;
+  }
+}
+
+.live__card {
+  border-radius: 24px;
+  max-width: 400px;
+  width: 100%;
+  background-color: rgb(39, 45, 55);
+}
+
+
+.featured-live {
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 160px;
+}
+
+.featured__block {
+  max-width: 282px;
+  width: 100%;
+  background-color: #272D37;
+  text-align: center;
+  padding-top: 8px;
+  border-radius: 16px;
+
+  .featured-user_img img {
+    width: 108px;
+    border-radius: 90px;
+    border: 2px solid #fff;
+    margin-top: -56px;
+  }
+
+  p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; /* 150% */
+    color:#fff;
+    margin-bottom: 24px;
+    img {
+      margin-right: 8px;
+    }
+  }
+
+  h4 {
+    margin-top: 16px;
+    margin-bottom: 8px;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px; /* 133.333% */
+    text-transform: capitalize;
+    color: #fff;
+  }
+}
+
+.featflex {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.hot-nft {
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 160px;
+  .title-block a {
+    padding: 11px 28px;
+  }
+}
+
+.hot__tabs {
+  display: flex;
+  gap:24px;
+}
+
+.hot__triger__block {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap:24px;
+}
+
+.hot-nft_blocks {
+  background-color: #272D37;
+  max-width: 384px;
+  width: 100%;
+  border-radius: 24px;
+
+  .card__img {
+    width: 100%;
+
+  }
+}
+
+.hot_btn {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px; /* 200% */
+  text-transform: capitalize;
+  color: #fff;
+  padding: 12px 46px;
+  border: 1px solid #1E50FF;
+  border-radius: 16px;
+  text-decoration: none;
+  margin: auto;
+  display: block;
+  max-width: 176px;
+  margin-top: 56px;
+  transition: 0.3s;
+}
+
+.hot_btn:hover {
+  background-color: #1E50FF;
+  transition: 0.3s;
+}
+
+.hot-nft_blocks {
+  img {
+    transition: 0.3s;
+  }
+
+  .sale_timer {
+    visibility: visible;
+    transition: 0.3s;
+    opacity: 1;
+  }
+}
+
+.hot-nft_blocks:hover {
+  .card__img {
+    filter: blur(4px);
+    transition: 0.3s;
+    cursor: pointer;
+  }
+
+  .sale_timer {
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+  }
+
+  .bid__btn a {
+    opacity: 1;
+    display: block;
+    transition: 0.3s;
+  }
+}
+
+.buy_nft_btn {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  bottom: 100px;
+  margin: 0 auto;
+  text-align: center;
+
+  a {
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    margin: auto;
+  }
+}
+
+.bid__btn {
+
+  a {
+    position: absolute;
+    display: inline-block;
+    top: calc(50% - 32px);
+    left: 25%;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px; /* 200% */
+    text-transform: capitalize;
+    text-decoration: none;
+    color: #fff;
+    padding: 16px 51px;
+    border-radius: 12px;
+    background-color: #1E50FF;
+    opacity: 0;
+    transition: 0.3s;
+
+  }
+
+}
+
+.joindiscordblock {
+  max-width: 1200px;
+  margin: 0px auto;
+  text-align: center;
+  padding: 48px 0px;
+  background: radial-gradient(487.85% 232.97% at -44.29% -62.34%, rgba(255, 255, 255, 0.30) 0%, rgba(255, 255, 255, 0.00) 100%);
+  backdrop-filter: blur(37px);
+  border-radius: 12px;
+  margin-top: 168px;
+  border: 2px solid #1E50FF;
+  margin-bottom: 160px;
+  h4 {
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 63.984px; /* 133.3% */
+    text-transform: capitalize;
+    color: #fff;
+    margin-bottom: 24px;
+
+  }
+
+  p {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px; /* 200% */
+    color: #fff;
+    margin: auto;
+    margin-bottom: 40px;
+    max-width: 690px;
+
+  }
+
+  a {
+
+    padding: 16px 40px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 12px;
+    transition: 0.3s;
+    border: 1px solid #1E50FF;
+  }
+
+  a:hover {
+    transition: 0.3s;
+    background-color: #1E50FF;
+  }
+}
+
+.footer-block {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer_content {
+  display: flex;
+  justify-content: space-between;
+  gap:85px;
+}
+
+
+.footer__logo {
+  max-width: 350px;
+  width: 100%;
+
+  p {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px; /* 200% */
+    color: #ADB9C7;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 32px; /* 200% */
+    text-transform: capitalize;
+    text-decoration: none;
+    margin-bottom: 28px;
+    span {
+      margin-left: 10px;
+    }
+  }
+}
+
+.resources__nav {
+  h5 {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px; /* 133.333% */
+    text-transform: capitalize;
+    color: #fff;
+    margin-bottom: 24px;
+  }
+
+  li {
+    margin-bottom: 16px;
+  }
+
+  a {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px; /* 200% */
+    color: #ADB9C7;
+    text-decoration: none;
+  }
+}
+
+.company__nav {
+  h5 {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px; /* 133.333% */
+    text-transform: capitalize;
+    color: #fff;
+    margin-bottom: 24px;
+  }
+
+  li {
+    margin-bottom: 16px;
+  }
+
+  a {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px; /* 200% */
+    color: #ADB9C7;
+    text-decoration: none;
+  }
+}
+
+.contact__block {
+  max-width: 180px;
+
+  h5 {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px; /* 133.333% */
+    text-transform: capitalize;
+    color: #fff;
+    margin-bottom: 24px;
+  }
+
+  p {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px; /* 200% */
+    color: #ADB9C7;
+  }
+}
+
+.social__links {
+  display: flex;
+  justify-content: flex-start;
+  gap:24px;
+  margin-top: 18px;
+
+  img {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+footer {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.all-reserver {
+  margin-bottom: 64px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 171.429% */
+  color:#fff;
+  margin-top: 8px;
+}
