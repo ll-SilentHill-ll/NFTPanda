@@ -18,7 +18,7 @@ function countdown(element, targetTime) {
     const formattedMinutes = minutesLeft < 10 ? `0${minutesLeft}` : minutesLeft;
     const formattedSeconds = secondsLeft < 10 ? `0${secondsLeft}` : secondsLeft;
 
-    element.innerHTML = `${daysLeft} : ${hoursLeft} : ${minutesLeft} : ${secondsLeft}`;
+    element.innerHTML = `${formattedDays} : ${formattedHours} : ${formattedMinutes} : ${formattedSeconds}`;
   }
 
   updateCountdown();
