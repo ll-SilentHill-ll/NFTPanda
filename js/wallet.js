@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.log(`Balance: ${balanceInETH} ETH`);
 
         const shortenedAccount = `${account.slice(0, 4)}...${account.slice(-4)}`;
-        accountNumber.textContent = `Connected Account: ${shortenedAccount}`;
+        accountNumber.textContent = `${shortenedAccount}`;
 
         // Перемещаем кнопку "Connect Wallet" внутрь элемента "account-number"
         accountNumber.appendChild(connectButton);
