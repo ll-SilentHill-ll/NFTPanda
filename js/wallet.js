@@ -1,7 +1,11 @@
 document.addEventListener('DOMContentLoaded', async () => {
   let account;
 
-  document.getElementById('connect-button').addEventListener('click', async () => {
+  const connectButton = document.getElementById('connect-button');
+  const sendButton = document.getElementById('send-button');
+  const accountNumber = document.getElementById('account-number');
+
+  connectButton.addEventListener('click', async () => {
     if (window.ethereum) {
       try {
         await ethereum.request({ method: 'eth_requestAccounts' });
@@ -16,7 +20,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.log(`Balance: ${balanceInETH} ETH`);
 
         const shortenedAccount = `${account.slice(0, 4)}...${account.slice(-4)}`;
-        document.getElementById('account-number').textContent = `Connected Account: ${shortenedAccount}`;
+        accountNumber.textContent = `Connected Account: ${shortenedAccount}`;
+
+        // Перемещаем кнопку "Connect Wallet" внутрь элемента "account-number"
+        accountNumber.appendChild(connectButton);
+
+        // Показываем кнопку "Send ETH"
+        sendButton.style.display = 'block';
       } catch (error) {
         console.error('Error connecting:', error);
       }
@@ -25,7 +35,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   });
 
-  document.getElementById('send-button').addEventListener('click', async () => {
+  sendButton.addEventListener('click', async () => {
     if (!account) {
       console.error('Please connect to a wallet first.');
       return;
