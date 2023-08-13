@@ -19,7 +19,7 @@ function countdown(element, targetTime) {
 }
 
 // Получаем все элементы с классом sale_timer
-const timerElements = document.querySelectorAll('.sale_timer');
+const timerElements = document.querySelectorAll('.timer_element');
 
 // Устанавливаем обратный отсчет для каждого элемента
 timerElements.forEach(element => {
