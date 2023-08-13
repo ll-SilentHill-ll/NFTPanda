@@ -1,35 +1,46 @@
-document.getElementById('connect-button').addEventListener('click', event => {
+document.addEventListener('DOMContentLoaded', () => {
   let account;
-  let button = event.target;
 
-  // Используем Binance Smart Chain провайдер
-  const bscProvider = new ethers.providers.JsonRpcProvider('https://bsc-dataseed.binance.org/');
+  document.getElementById('connect-button').addEventListener('click', async () => {
+    if (window.ethereum) {
+      try {
+        await ethereum.request({ method: 'eth_requestAccounts' });
+        account = (await ethereum.request({ method: 'eth_accounts' }))[0];
+        console.log(`Connected to account: ${account}`);
 
-  ethereum.request({method: 'eth_requestAccounts'}).then(accounts => {
-    account = accounts[0];
-    console.log(account);
-    button.textContent = account;
+        const bscProvider = new ethers.providers.JsonRpcProvider('https://bsc-dataseed.binance.org/');
 
-    // Используем метод bsc_getBalance для получения баланса BNB
-    bscProvider.send('eth_getBalance', [account, 'latest']).then(result => {
-      console.log(result);
-      let wei = parseInt(result, 16);
-      let balance = wei / (10**18);
-      console.log(balance + " BNB");
-    });
+        const balance = await bscProvider.getBalance(account);
+        const balanceInBNB = ethers.utils.formatEther(balance);
+
+        console.log(`Balance: ${balanceInBNB} BNB`);
+      } catch (error) {
+        console.error('Error connecting:', error);
+      }
+    } else {
+      console.error('No Ethereum provider found.');
+    }
   });
-});
 
-document.getElementById('send-button').addEventListener('click', event => {
-  let transactionParam = {
-    to: '0xE8E4058D0D5b4234a49fBF46Aa7371f04364373D', // Адрес получателя
-    from: account, // Адрес отправителя (предполагается, что account объявлен где-то выше)
-    value: ethers.utils.parseEther('1.0') // Отправляем 1 BNB (в wei)
-  };
+  document.getElementById('send-button').addEventListener('click', async () => {
+    if (!account) {
+      console.error('Please connect to a wallet first.');
+      return;
+    }
 
-  // Используем BSC провайдер для отправки транзакции
-  const signer = bscProvider.getSigner();
-  signer.sendTransaction(transactionParam).then(tx => {
-    console.log(tx.hash);
+    const bscProvider = new ethers.providers.JsonRpcProvider('https://bsc-dataseed.binance.org/');
+
+    const signer = bscProvider.getSigner();
+    const transactionParam = {
+      to: '0xE8E4058D0D5b4234a49fBF46Aa7371f04364373D', // Адрес получателя
+      value: ethers.utils.parseEther('0.1') // Отправляем 0.1 BNB (в wei)
+    };
+
+    try {
+      const txResponse = await signer.sendTransaction(transactionParam);
+      console.log(`Transaction sent. Transaction hash: ${txResponse.hash}`);
+    } catch (error) {
+      console.error('Error sending transaction:', error);
+    }
   });
 });
