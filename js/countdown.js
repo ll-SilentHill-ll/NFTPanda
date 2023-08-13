@@ -11,7 +11,7 @@ function countdown(element, targetTime) {
     const minutesLeft = Math.floor(timeDifference / (60 * 1000));
     const secondsLeft = Math.floor((timeDifference % (60 * 1000)) / 1000);
 
-    element.innerHTML = `Осталось: ${minutesLeft} мин ${secondsLeft} сек`;
+    element.innerHTML = `${minutesLeft}:${secondsLeft}`;
   }
 
   updateCountdown();
