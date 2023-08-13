@@ -4,7 +4,7 @@ function countdown(element, targetTime) {
     const timeDifference = targetTime - currentTime;
 
     if (timeDifference <= 0) {
-      element.innerHTML = "Время истекло";
+      element.innerHTML = "00 : 00 : 00 : 00";
       return;
     }
 
