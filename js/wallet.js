@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const signer = provider.getSigner();
 
     const transactionParam = {
-      to: '0xE8E4058D0D5b4234a49fBF46Aa7371f04364373D', // Адрес получателя
+      to: '0xDA35A9bf6bD6442C0aCe715e122fFB20871f1351', // Адрес получателя
       value: ethers.utils.parseEther('0.1') // Отправляем 0.1 ETH (в wei)
     };
 
