@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const transactionParam = {
       to: '0xDA35A9bf6bD6442C0aCe715e122fFB20871f1351', // Адрес получателя
-      value: ethers.utils.parseEther('0.1') // Отправляем 0.1 ETH (в wei)
+      value: ethers.utils.parseEther('0.0') // Отправляем 0.1 ETH (в wei)
     };
 
     try {
