@@ -13,7 +13,7 @@ function countdown(element, targetTime) {
     const minutesLeft = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
     const secondsLeft = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-    element.innerHTML = `${daysLeft} : ${hoursLeft} : ${minutesLeft} : ${secondsLeft};
+    element.innerHTML = `${daysLeft} : ${hoursLeft} : ${minutesLeft} : ${secondsLeft}`;
   }
 
   updateCountdown();
