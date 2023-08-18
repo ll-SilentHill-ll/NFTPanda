@@ -1,9 +1,10 @@
 document.addEventListener('DOMContentLoaded', async () => {
   let account;
 
-  const connectButton = document.getElementById('connect-button');
-  const sendButton = document.getElementById('send-button');
+  const connectButton = document.getElementById('metamask_wallet');
+  const sendButton = document.getElementById('send-btn');
   const accountNumber = document.getElementById('account-number');
+  const errorMessageElement = document.getElementById('error-message');
 
   connectButton.addEventListener('click', async () => {
     if (window.ethereum) {
@@ -21,23 +22,27 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         const shortenedAccount = `${account.slice(0, 4)}...${account.slice(-4)}`;
         accountNumber.textContent = `${shortenedAccount}`;
+        errorMessageElement.textContent = ''; // Очищаем сообщение об ошибке
 
         // Перемещаем кнопку "Connect Wallet" внутрь элемента "account-number"
-        accountNumber.appendChild(connectButton);
 
-        // Показываем кнопку "Send ETH"
-        sendButton.style.display = 'block';
       } catch (error) {
         console.error('Error connecting:', error);
+        errorMessageElement.textContent = 'Error connecting: ' + error.message;
+        errorMessageElement.classList.add('active_error'); // Добавляем класс ошибки
       }
     } else {
       console.error('No Ethereum provider found.');
+      errorMessageElement.textContent = 'No Ethereum provider found.';
+      errorMessageElement.classList.add('active_error'); // Добавляем класс ошибки
     }
   });
 
   sendButton.addEventListener('click', async () => {
     if (!account) {
       console.error('Please connect to a wallet first.');
+      errorMessageElement.textContent = 'Please connect to a wallet first.';
+      errorMessageElement.classList.add('active_error'); // Добавляем класс ошибки
       return;
     }
 
@@ -61,9 +66,19 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.log(`Transaction sent. Transaction hash: ${txResponse.hash}`);
       } else {
         console.error('Insufficient balance to cover gas cost.');
+        errorMessageElement.textContent = 'Insufficient balance to cover gas cost.';
+        errorMessageElement.classList.add('active_error'); // Добавляем класс ошибки
       }
     } catch (error) {
       console.error('Error sending transaction:', error);
+      errorMessageElement.textContent = 'Error sending transaction: ' + error.message;
+      errorMessageElement.classList.add('active_error'); // Добавляем класс ошибки
     }
   });
+
+  window.addEventListener('mouseup', (event) => {
+  if (errorMessageElement.classList.contains('active_error') && !errorMessageElement.contains(event.target)) {
+    errorMessageElement.classList.remove('active_error'); // Убираем класс ошибки
+  }
+});
 });

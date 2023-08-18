@@ -6,17 +6,20 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="style/reset.css">
   <link rel="stylesheet" href="style/style.css">
+  <link rel="shortcut icon" href="./img/logo.svg" type="image/ico">
   <title>PandaNFT</title>
 </head>
 <body>
+
+  <div class="error_m" id="error-message"></div>
   <header>
     <nav class="header__menu conteiner">
       <div class="header__logo">
         <a href=""><img src="img/logo.svg" alt=""><span>Panda NFT</span></a>
       </div>
       <ul class="header__list">
-        <li>
-          <a href="#perevaga" class="header__link">Home</a>
+        <li class="header__link_active">
+          <a href="#" class="header__link">Home</a>
           <div class="li_line"></div>
         </li>
         <li>
@@ -41,10 +44,18 @@
           <div class="li_line"></div>
         </li>
       </ul>
-      <div class="header__button" id="connect-button">
+      <div class="header__button">
         <p id="account-number"><span>Connect Wallet </span></p>
       </div>
     </nav>
+
+  <div class="wallet_variant">
+    <div class="wallet_btn">
+      <div class="metamask_wallet" id="metamask_wallet"><img src="img/metamask.svg" alt=""></div>
+      <div class="trustwallet" id="trust_wallet"><img src="img/trustwallet.svg" alt=""></div>
+      <div class="wallet_close">+</div>
+    </div>
+  </div>
 
 
   <section>
@@ -52,32 +63,36 @@
       <div class="header-block_text">
         <h1>Discover a New Era of Crypto Currency</h1>
         <p>Panda NFT is the primier marketplace for NFT, which are digital items you can truly own. Digital items have existed for a long time, but never like this.</p>
-        <p id="send-button" class="block-text_button">Get Started</p>
+        <span id="send-btn" class="block-text_button">Get Started</span>
       </div>
 
       <div class="item-card">
         <div class="item_content">
           <div class="img__block">
             <img class="card__img" src="img/mainimg.svg" alt="">
-            <div class="sale_timer">
-              <img src="img/fier.svg" alt="">
-              <span class="timer_element" data-target-time="2023-08-13T23:00:00"></span>
-            </div>
           </div>
 
           <div class="item_name">
-            <h3>"Hamlet Contemplates ...</h3>
-            <span>BSC</span>
+            <h3>Dao Vinci #0000</h3>
+            <span>Current Bid</span>
           </div>
 
           <div class="creator-info">
             <div class="creator-nft_card">
               <img src="img/maincreator.svg" alt="">
-              <p>Creator <br> <span>SalvadorDali</span></p>
+              <p><span>SalvadorDali</span></p>
             </div>
             <div class="nft-card_bid">
-              <p>Current Bid<br><span>4.89 ETH</span></p>
+              <p><span>4.89 ETH</span></p>
             </div>
+          </div>
+
+          <div class="nft_timer_block">
+            <div class="nft_sale__timer">
+              <img src="img/fier.svg" alt="">
+              <span class="timer_element" data-target-time="2023-08-16T13:20:00"></span>
+            </div>
+            <div class="nft_bid_click"><a href="">Bid</a></div>
           </div>
         </div>
 
@@ -85,9 +100,14 @@
           <div class="item_content">
             <div class="img__block">
               <img class="card__img" src="img/mainimgnext.svg" alt="">
-              <div class="sale_timer">
-                <img src="img/fier.svg" alt="">
-                <span>05 : 12 : 07 : 45</span>
+
+
+              <div class="nft_timer_block">
+                <div class="nft_sale__timer">
+                  <img src="img/fier.svg" alt="">
+                  <span class="timer_element" data-target-time="2023-08-17T13:20:00"></span>
+                </div>
+                <div class="nft_bid_click"><a href="">Bid</a></div>
               </div>
             </div>
 
@@ -159,33 +179,37 @@
     <div class="conteiner-live">
       <div class="title-block">
         <h3>Live Auctions</h3>
-        <a href="">View More</a>
+        <p><a href="">View More</a></p>
       </div>
 
       <div class="auction_card">
         <div class="live__card">
           <div class="item_content">
             <div class="img__block">
-              <img class="card__img" src="img/liveimg1.svg" alt="">
-              <div class="sale_timer">
-                <img src="img/fier.svg" alt="">
-                <span>01 : 42 : 17 : 25</span>
-              </div>
+              <img class="card__img" src="img/live_1.svg" alt="">
             </div>
 
             <div class="item_name">
-              <h3>"Hamlet Contemplates ...</h3>
-              <span>BSC</span>
+              <h3>Remivision #186</h3>
+              <span>Current Bid</span>
             </div>
 
             <div class="creator-info">
               <div class="creator-nft_card">
-                <img src="img/livecreator1.svg" alt="">
-                <p>Creator <br> <span>SalvadorDali</span></p>
+                <img src="img/MilAIdy.svg" alt="">
+                <p><span>MilAIdy</span></p>
               </div>
               <div class="nft-card_bid">
-                <p>Current Bid<br><span>1.37 ETH</span></p>
+                <p><span>0.059 ETH</span></p>
               </div>
+            </div>
+
+            <div class="nft_timer_block">
+              <div class="nft_sale__timer">
+                <img src="img/fier.svg" alt="">
+                <span class="timer_element" data-target-time="2023-08-16T13:20:00"></span>
+              </div>
+              <div class="nft_bid_click"><a href="">Bid</a></div>
             </div>
           </div>
         </div>
@@ -193,26 +217,30 @@
         <div class="live__card">
           <div class="item_content">
             <div class="img__block">
-              <img class="card__img" src="img/liveimg2.svg" alt="">
-              <div class="sale_timer">
-                <img src="img/fier.svg" alt="">
-                <span>03 : 22 : 44 : 05</span>
-              </div>
+              <img class="card__img" src="img/live_2.svg" alt="">
             </div>
 
             <div class="item_name">
-              <h3>"Hamlet Contemplates ...</h3>
-              <span>BSC</span>
+              <h3>DeGods #663</h3>
+              <span>Current Bid</span>
             </div>
 
             <div class="creator-info">
               <div class="creator-nft_card">
-                <img src="img/livecreator2.svg" alt="">
-                <p>Creator <br> <span>SalvadorDali</span></p>
+                <img src="img/DeGods.svg" alt="">
+                <p><span>DeGods</span></p>
               </div>
               <div class="nft-card_bid">
-                <p>Current Bid<br><span>4.15 ETH</span></p>
+                <p><span>FREE</span></p>
               </div>
+            </div>
+
+            <div class="nft_timer_block">
+              <div class="nft_sale__timer">
+                <img src="img/fier.svg" alt="">
+                <span class="timer_element" data-target-time="2023-08-16T13:20:00"></span>
+              </div>
+              <div class="nft_bid_click"><a href="">Bid</a></div>
             </div>
           </div>
         </div>
@@ -220,26 +248,30 @@
         <div class="live__card">
           <div class="item_content">
             <div class="img__block">
-              <img class="card__img" src="img/mainimg.svg" alt="">
-              <div class="sale_timer">
-                <img src="img/fier.svg" alt="">
-                <span>05 : 12 : 07 : 45</span>
-              </div>
+              <img class="card__img" src="img/live_3.svg" alt="">
             </div>
 
             <div class="item_name">
-              <h3>"Hamlet Contemplates ...</h3>
-              <span>BSC</span>
+              <h3>Dao Vinci #0000</h3>
+              <span>Current Bid</span>
             </div>
 
             <div class="creator-info">
               <div class="creator-nft_card">
-                <img src="img/maincreator.svg" alt="">
-                <p>Creator <br> <span>SalvadorDali</span></p>
+                <img src="img/APE.png" alt="">
+                <p><span>APE</span></p>
               </div>
               <div class="nft-card_bid">
-                <p>Current Bid<br><span>4.89 ETH</span></p>
+                <p><span>42.89 ETH</span></p>
               </div>
+            </div>
+
+            <div class="nft_timer_block">
+              <div class="nft_sale__timer">
+                <img src="img/fier.svg" alt="">
+                <span class="timer_element" data-target-time="2023-08-16T13:20:00"></span>
+              </div>
+              <div class="nft_bid_click"><a href="">Bid</a></div>
             </div>
           </div>
         </div>
@@ -251,7 +283,7 @@
     <div class="featured-live">
       <div class="title-block">
         <h3>Featured Artist</h3>
-        <a href="">View More</a>
+        <p><a href="">View More</a></p>
       </div>
 
       <div class="featflex">
@@ -299,42 +331,43 @@
       <div class="title-block">
         <h3>Featured Artist</h3>
         <div class="hot__tabs">
-          <a href="">Music</a>
-          <a href="">Art</a>
-          <a href="">Sports</a>
-          <a href="">Virtual</a>
-          <a href="">Videos</a>
-          <a href="">More</a>
+          <p class="active_bottom_tabs js-tab_trigger" data-tab='1'>Music</p>
+          <p class="js-tab_trigger" data-tab='2'>Art</p>
+          <p class="js-tab_trigger" data-tab='3'>Sports</p>
+          <p class="js-tab_trigger" data-tab='4'>Virtual</p>
+          <p class="js-tab_trigger" data-tab='5'>Videos</p>
+          <p class="js-tab_trigger" data-tab='6'>More</p>
         </div>
       </div>
 
-      <div class="hot__triger__block">
+      <div class="hot__triger__block js-tab_contant active_trigger" data-tab='1'>
         <div class="hot-nft_blocks">
           <div class="item_content">
             <div class="img__block">
-              <img class="card__img" src="img/liveimg2.svg" alt="">
-              <div class="sale_timer">
-                <img src="img/fier.svg" alt="">
-                <span>03 : 22 : 44 : 05</span>
-              </div>
-              <div class="bid__btn">
-                <a href="">Place a bid</a>
-              </div>
+              <img class="card__img" src="img/music_1.png" alt="">
             </div>
 
             <div class="item_name">
-              <h3>"Hamlet Contemplates ...</h3>
-              <span>BSC</span>
+              <h3>LoudPunx #782</h3>
+              <span>Current Bid</span>
             </div>
 
             <div class="creator-info">
               <div class="creator-nft_card">
-                <img src="img/livecreator2.svg" alt="">
-                <p>Creator <br> <span>SalvadorDali</span></p>
+                <img src="img/music_1a.png" alt="">
+                <p><span>LoudPunx</span></p>
               </div>
               <div class="nft-card_bid">
-                <p>Current Bid<br><span>4.15 ETH</span></p>
+                <p><span>1.21 ETH</span></p>
               </div>
+            </div>
+
+            <div class="nft_timer_block">
+              <div class="nft_sale__timer">
+                <img src="img/fier.svg" alt="">
+                <span class="timer_element" data-target-time="2023-08-18T13:20:00"></span>
+              </div>
+              <div class="nft_bid_click"><a href="">Bid</a></div>
             </div>
           </div>
         </div>
@@ -342,29 +375,30 @@
         <div class="hot-nft_blocks">
           <div class="item_content">
             <div class="img__block">
-              <img class="card__img" src="img/liveimg2.svg" alt="">
-              <div class="sale_timer">
-                <img src="img/fier.svg" alt="">
-                <span>03 : 22 : 44 : 05</span>
-              </div>
-              <div class="bid__btn">
-                <a href="">Place a bid</a>
-              </div>
+              <img class="card__img" src="img/music_2.png" alt="">
             </div>
 
             <div class="item_name">
-              <h3>"Hamlet Contemplates ...</h3>
-              <span>BSC</span>
+              <h3>Another Life #2 317</h3>
+              <span>Current Bid</span>
             </div>
 
             <div class="creator-info">
               <div class="creator-nft_card">
-                <img src="img/livecreator2.svg" alt="">
-                <p>Creator <br> <span>SalvadorDali</span></p>
+                <img src="img/music_2a.png" alt="">
+                <p><span>Another Life</span></p>
               </div>
               <div class="nft-card_bid">
-                <p>Current Bid<br><span>4.15 ETH</span></p>
+                <p><span>FREE</span></p>
               </div>
+            </div>
+
+            <div class="nft_timer_block">
+              <div class="nft_sale__timer">
+                <img src="img/fier.svg" alt="">
+                <span class="timer_element" data-target-time="2023-08-18T23:20:00"></span>
+              </div>
+              <div class="nft_bid_click"><a href="">Bid</a></div>
             </div>
           </div>
         </div>
@@ -372,29 +406,30 @@
         <div class="hot-nft_blocks">
           <div class="item_content">
             <div class="img__block">
-              <img class="card__img" src="img/liveimg2.svg" alt="">
-              <div class="sale_timer">
-                <img src="img/fier.svg" alt="">
-                <span>03 : 22 : 44 : 05</span>
-              </div>
-              <div class="bid__btn">
-                <a href="">Place a bid</a>
-              </div>
+              <img class="card__img" src="img/music_3.png" alt="">
             </div>
 
             <div class="item_name">
-              <h3>"Hamlet Contemplates ...</h3>
-              <span>BSC</span>
+              <h3>GroundUp #023</h3>
+              <span>Current Bid</span>
             </div>
 
             <div class="creator-info">
               <div class="creator-nft_card">
-                <img src="img/livecreator2.svg" alt="">
-                <p>Creator <br> <span>SalvadorDali</span></p>
+                <img src="img/music_3a.png" alt="">
+                <p><span>GroundUp </span></p>
               </div>
               <div class="nft-card_bid">
-                <p>Current Bid<br><span>4.15 ETH</span></p>
+                <p><span>0.06 ETH</span></p>
               </div>
+            </div>
+
+            <div class="nft_timer_block">
+              <div class="nft_sale__timer">
+                <img src="img/fier.svg" alt="">
+                <span class="timer_element" data-target-time="2023-08-19T13:20:00"></span>
+              </div>
+              <div class="nft_bid_click"><a href="">Bid</a></div>
             </div>
           </div>
         </div>
@@ -402,29 +437,30 @@
         <div class="hot-nft_blocks">
           <div class="item_content">
             <div class="img__block">
-              <img class="card__img" src="img/liveimg2.svg" alt="">
-              <div class="sale_timer">
-                <img src="img/fier.svg" alt="">
-                <span>03 : 22 : 44 : 05</span>
-              </div>
-              <div class="bid__btn">
-                <a href="">Place a bid</a>
-              </div>
+              <img class="card__img" src="img/music_4.png" alt="">
             </div>
 
             <div class="item_name">
-              <h3>"Hamlet Contemplates ...</h3>
-              <span>BSC</span>
+              <h3>Armin's #1041</h3>
+              <span>Current Bid</span>
             </div>
 
             <div class="creator-info">
               <div class="creator-nft_card">
-                <img src="img/livecreator2.svg" alt="">
-                <p>Creator <br> <span>SalvadorDali</span></p>
+                <img src="img/music_4a.png" alt="">
+                <p><span>Armin's</span></p>
               </div>
               <div class="nft-card_bid">
-                <p>Current Bid<br><span>4.15 ETH</span></p>
+                <p><span>0.105 ETH</span></p>
               </div>
+            </div>
+
+            <div class="nft_timer_block">
+              <div class="nft_sale__timer">
+                <img src="img/fier.svg" alt="">
+                <span class="timer_element" data-target-time="2023-08-19T21:20:00"></span>
+              </div>
+              <div class="nft_bid_click"><a href="">Bid</a></div>
             </div>
           </div>
         </div>
@@ -432,29 +468,30 @@
         <div class="hot-nft_blocks">
           <div class="item_content">
             <div class="img__block">
-              <img class="card__img" src="img/liveimg2.svg" alt="">
-              <div class="sale_timer">
-                <img src="img/fier.svg" alt="">
-                <span>03 : 22 : 44 : 05</span>
-              </div>
-              <div class="bid__btn">
-                <a href="">Place a bid</a>
-              </div>
+              <img class="card__img" src="img/music_5.png" alt="">
             </div>
 
             <div class="item_name">
-              <h3>"Hamlet Contemplates ...</h3>
-              <span>BSC</span>
+              <h3>SAN Origin #8633</h3>
+              <span>Current Bid</span>
             </div>
 
             <div class="creator-info">
               <div class="creator-nft_card">
-                <img src="img/livecreator2.svg" alt="">
-                <p>Creator <br> <span>SalvadorDali</span></p>
+                <img src="img/music_5a.png" alt="">
+                <p><span>SAN Origin</span></p>
               </div>
               <div class="nft-card_bid">
-                <p>Current Bid<br><span>4.15 ETH</span></p>
+                <p><span>1.325 ETH</span></p>
               </div>
+            </div>
+
+            <div class="nft_timer_block">
+              <div class="nft_sale__timer">
+                <img src="img/fier.svg" alt="">
+                <span class="timer_element" data-target-time="2023-08-19T22:00:00"></span>
+              </div>
+              <div class="nft_bid_click"><a href="">Bid</a></div>
             </div>
           </div>
         </div>
@@ -462,33 +499,594 @@
         <div class="hot-nft_blocks">
           <div class="item_content">
             <div class="img__block">
-              <img class="card__img" src="img/liveimg2.svg" alt="">
-              <div class="buy_nft_btn">
-                <a href="">Place a bid</a>
-              </div>
-
-              <div class="sale_timer">
-                <img src="img/fier.svg" alt="">
-                <span>03 : 22 : 44 : 05</span>
-              </div>
-              <div class="bid__btn">
-                <a href="">Place a bid</a>
-              </div>
+              <img class="card__img" src="img/music_6.png" alt="">
             </div>
 
             <div class="item_name">
-              <h3>"Hamlet Contemplates ...</h3>
-              <span>BSC</span>
+              <h3>Moonshot #003</h3>
+              <span>Current Bid</span>
             </div>
 
             <div class="creator-info">
               <div class="creator-nft_card">
-                <img src="img/livecreator2.svg" alt="">
-                <p>Creator <br> <span>SalvadorDali</span></p>
+                <img src="img/music_6a.png" alt="">
+                <p><span>Moonshot</span></p>
               </div>
               <div class="nft-card_bid">
-                <p>Current Bid<br><span>4.15 ETH</span></p>
+                <p><span>11 ETH</span></p>
               </div>
+            </div>
+
+            <div class="nft_timer_block">
+              <div class="nft_sale__timer">
+                <img src="img/fier.svg" alt="">
+                <span class="timer_element" data-target-time="2023-08-20T10:00:00"></span>
+              </div>
+              <div class="nft_bid_click"><a href="">Bid</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hot__triger__block js-tab_contant" data-tab='2'>
+        <div class="hot-nft_blocks">
+          <div class="item_content">
+            <div class="img__block">
+              <img class="card__img" src="img/live_2.svg" alt="">
+            </div>
+
+            <div class="item_name">
+              <h3>DeGods #663</h3>
+              <span>Current Bid</span>
+            </div>
+
+            <div class="creator-info">
+              <div class="creator-nft_card">
+                <img src="img/DeGods.svg" alt="">
+                <p><span>DeGods</span></p>
+              </div>
+              <div class="nft-card_bid">
+                <p><span>FREE</span></p>
+              </div>
+            </div>
+
+            <div class="nft_timer_block">
+              <div class="nft_sale__timer">
+                <img src="img/fier.svg" alt="">
+                <span class="timer_element" data-target-time="2023-08-16T13:20:00"></span>
+              </div>
+              <div class="nft_bid_click"><a href="">Bid</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hot-nft_blocks">
+          <div class="item_content">
+            <div class="img__block">
+              <img class="card__img" src="img/live_2.svg" alt="">
+            </div>
+
+            <div class="item_name">
+              <h3>DeGods #663</h3>
+              <span>Current Bid</span>
+            </div>
+
+            <div class="creator-info">
+              <div class="creator-nft_card">
+                <img src="img/DeGods.svg" alt="">
+                <p><span>DeGods</span></p>
+              </div>
+              <div class="nft-card_bid">
+                <p><span>FREE</span></p>
+              </div>
+            </div>
+
+            <div class="nft_timer_block">
+              <div class="nft_sale__timer">
+                <img src="img/fier.svg" alt="">
+                <span class="timer_element" data-target-time="2023-08-16T13:20:00"></span>
+              </div>
+              <div class="nft_bid_click"><a href="">Bid</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hot-nft_blocks">
+          <div class="item_content">
+            <div class="img__block">
+              <img class="card__img" src="img/live_2.svg" alt="">
+            </div>
+
+            <div class="item_name">
+              <h3>DeGods #663</h3>
+              <span>Current Bid</span>
+            </div>
+
+            <div class="creator-info">
+              <div class="creator-nft_card">
+                <img src="img/DeGods.svg" alt="">
+                <p><span>DeGods</span></p>
+              </div>
+              <div class="nft-card_bid">
+                <p><span>FREE</span></p>
+              </div>
+            </div>
+
+            <div class="nft_timer_block">
+              <div class="nft_sale__timer">
+                <img src="img/fier.svg" alt="">
+                <span class="timer_element" data-target-time="2023-08-16T13:20:00"></span>
+              </div>
+              <div class="nft_bid_click"><a href="">Bid</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hot-nft_blocks">
+          <div class="item_content">
+            <div class="img__block">
+              <img class="card__img" src="img/live_2.svg" alt="">
+            </div>
+
+            <div class="item_name">
+              <h3>DeGods #663</h3>
+              <span>Current Bid</span>
+            </div>
+
+            <div class="creator-info">
+              <div class="creator-nft_card">
+                <img src="img/DeGods.svg" alt="">
+                <p><span>DeGods</span></p>
+              </div>
+              <div class="nft-card_bid">
+                <p><span>FREE</span></p>
+              </div>
+            </div>
+
+            <div class="nft_timer_block">
+              <div class="nft_sale__timer">
+                <img src="img/fier.svg" alt="">
+                <span class="timer_element" data-target-time="2023-08-16T13:20:00"></span>
+              </div>
+              <div class="nft_bid_click"><a href="">Bid</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hot-nft_blocks">
+          <div class="item_content">
+            <div class="img__block">
+              <img class="card__img" src="img/live_2.svg" alt="">
+            </div>
+
+            <div class="item_name">
+              <h3>DeGods #663</h3>
+              <span>Current Bid</span>
+            </div>
+
+            <div class="creator-info">
+              <div class="creator-nft_card">
+                <img src="img/DeGods.svg" alt="">
+                <p><span>DeGods</span></p>
+              </div>
+              <div class="nft-card_bid">
+                <p><span>FREE</span></p>
+              </div>
+            </div>
+
+            <div class="nft_timer_block">
+              <div class="nft_sale__timer">
+                <img src="img/fier.svg" alt="">
+                <span class="timer_element" data-target-time="2023-08-16T13:20:00"></span>
+              </div>
+              <div class="nft_bid_click"><a href="">Bid</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hot-nft_blocks">
+          <div class="item_content">
+            <div class="img__block">
+              <img class="card__img" src="img/live_2.svg" alt="">
+            </div>
+
+            <div class="item_name">
+              <h3>DeGods #663</h3>
+              <span>Current Bid</span>
+            </div>
+
+            <div class="creator-info">
+              <div class="creator-nft_card">
+                <img src="img/DeGods.svg" alt="">
+                <p><span>DeGods</span></p>
+              </div>
+              <div class="nft-card_bid">
+                <p><span>FREE</span></p>
+              </div>
+            </div>
+
+            <div class="nft_timer_block">
+              <div class="nft_sale__timer">
+                <img src="img/fier.svg" alt="">
+                <span class="timer_element" data-target-time="2023-08-16T13:20:00"></span>
+              </div>
+              <div class="nft_bid_click"><a href="">Bid</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hot__triger__block js-tab_contant" data-tab='3'>
+        <div class="hot-nft_blocks">
+          <div class="item_content">
+            <div class="img__block">
+              <img class="card__img" src="img/live_2.svg" alt="">
+            </div>
+
+            <div class="item_name">
+              <h3>DeGods #663</h3>
+              <span>Current Bid</span>
+            </div>
+
+            <div class="creator-info">
+              <div class="creator-nft_card">
+                <img src="img/DeGods.svg" alt="">
+                <p><span>DeGods</span></p>
+              </div>
+              <div class="nft-card_bid">
+                <p><span>FREE</span></p>
+              </div>
+            </div>
+
+            <div class="nft_timer_block">
+              <div class="nft_sale__timer">
+                <img src="img/fier.svg" alt="">
+                <span class="timer_element" data-target-time="2023-08-16T13:20:00"></span>
+              </div>
+              <div class="nft_bid_click"><a href="">Bid</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hot-nft_blocks">
+          <div class="item_content">
+            <div class="img__block">
+              <img class="card__img" src="img/live_2.svg" alt="">
+            </div>
+
+            <div class="item_name">
+              <h3>DeGods #663</h3>
+              <span>Current Bid</span>
+            </div>
+
+            <div class="creator-info">
+              <div class="creator-nft_card">
+                <img src="img/DeGods.svg" alt="">
+                <p><span>DeGods</span></p>
+              </div>
+              <div class="nft-card_bid">
+                <p><span>FREE</span></p>
+              </div>
+            </div>
+
+            <div class="nft_timer_block">
+              <div class="nft_sale__timer">
+                <img src="img/fier.svg" alt="">
+                <span class="timer_element" data-target-time="2023-08-16T13:20:00"></span>
+              </div>
+              <div class="nft_bid_click"><a href="">Bid</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hot-nft_blocks">
+          <div class="item_content">
+            <div class="img__block">
+              <img class="card__img" src="img/live_2.svg" alt="">
+            </div>
+
+            <div class="item_name">
+              <h3>DeGods #663</h3>
+              <span>Current Bid</span>
+            </div>
+
+            <div class="creator-info">
+              <div class="creator-nft_card">
+                <img src="img/DeGods.svg" alt="">
+                <p><span>DeGods</span></p>
+              </div>
+              <div class="nft-card_bid">
+                <p><span>FREE</span></p>
+              </div>
+            </div>
+
+            <div class="nft_timer_block">
+              <div class="nft_sale__timer">
+                <img src="img/fier.svg" alt="">
+                <span class="timer_element" data-target-time="2023-08-16T13:20:00"></span>
+              </div>
+              <div class="nft_bid_click"><a href="">Bid</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hot-nft_blocks">
+          <div class="item_content">
+            <div class="img__block">
+              <img class="card__img" src="img/live_2.svg" alt="">
+            </div>
+
+            <div class="item_name">
+              <h3>DeGods #663</h3>
+              <span>Current Bid</span>
+            </div>
+
+            <div class="creator-info">
+              <div class="creator-nft_card">
+                <img src="img/DeGods.svg" alt="">
+                <p><span>DeGods</span></p>
+              </div>
+              <div class="nft-card_bid">
+                <p><span>FREE</span></p>
+              </div>
+            </div>
+
+            <div class="nft_timer_block">
+              <div class="nft_sale__timer">
+                <img src="img/fier.svg" alt="">
+                <span class="timer_element" data-target-time="2023-08-16T13:20:00"></span>
+              </div>
+              <div class="nft_bid_click"><a href="">Bid</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hot-nft_blocks">
+          <div class="item_content">
+            <div class="img__block">
+              <img class="card__img" src="img/live_2.svg" alt="">
+            </div>
+
+            <div class="item_name">
+              <h3>DeGods #663</h3>
+              <span>Current Bid</span>
+            </div>
+
+            <div class="creator-info">
+              <div class="creator-nft_card">
+                <img src="img/DeGods.svg" alt="">
+                <p><span>DeGods</span></p>
+              </div>
+              <div class="nft-card_bid">
+                <p><span>FREE</span></p>
+              </div>
+            </div>
+
+            <div class="nft_timer_block">
+              <div class="nft_sale__timer">
+                <img src="img/fier.svg" alt="">
+                <span class="timer_element" data-target-time="2023-08-16T13:20:00"></span>
+              </div>
+              <div class="nft_bid_click"><a href="">Bid</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hot-nft_blocks">
+          <div class="item_content">
+            <div class="img__block">
+              <img class="card__img" src="img/live_2.svg" alt="">
+            </div>
+
+            <div class="item_name">
+              <h3>DeGods #663</h3>
+              <span>Current Bid</span>
+            </div>
+
+            <div class="creator-info">
+              <div class="creator-nft_card">
+                <img src="img/DeGods.svg" alt="">
+                <p><span>DeGods</span></p>
+              </div>
+              <div class="nft-card_bid">
+                <p><span>FREE</span></p>
+              </div>
+            </div>
+
+            <div class="nft_timer_block">
+              <div class="nft_sale__timer">
+                <img src="img/fier.svg" alt="">
+                <span class="timer_element" data-target-time="2023-08-16T13:20:00"></span>
+              </div>
+              <div class="nft_bid_click"><a href="">Bid</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hot__triger__block js-tab_contant" data-tab='4'>
+        <div class="hot-nft_blocks">
+          <div class="item_content">
+            <div class="img__block">
+              <img class="card__img" src="img/live_2.svg" alt="">
+            </div>
+
+            <div class="item_name">
+              <h3>DeGods #663</h3>
+              <span>Current Bid</span>
+            </div>
+
+            <div class="creator-info">
+              <div class="creator-nft_card">
+                <img src="img/DeGods.svg" alt="">
+                <p><span>DeGods</span></p>
+              </div>
+              <div class="nft-card_bid">
+                <p><span>FREE</span></p>
+              </div>
+            </div>
+
+            <div class="nft_timer_block">
+              <div class="nft_sale__timer">
+                <img src="img/fier.svg" alt="">
+                <span class="timer_element" data-target-time="2023-08-16T13:20:00"></span>
+              </div>
+              <div class="nft_bid_click"><a href="">Bid</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hot-nft_blocks">
+          <div class="item_content">
+            <div class="img__block">
+              <img class="card__img" src="img/live_2.svg" alt="">
+            </div>
+
+            <div class="item_name">
+              <h3>DeGods #663</h3>
+              <span>Current Bid</span>
+            </div>
+
+            <div class="creator-info">
+              <div class="creator-nft_card">
+                <img src="img/DeGods.svg" alt="">
+                <p><span>DeGods</span></p>
+              </div>
+              <div class="nft-card_bid">
+                <p><span>FREE</span></p>
+              </div>
+            </div>
+
+            <div class="nft_timer_block">
+              <div class="nft_sale__timer">
+                <img src="img/fier.svg" alt="">
+                <span class="timer_element" data-target-time="2023-08-16T13:20:00"></span>
+              </div>
+              <div class="nft_bid_click"><a href="">Bid</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hot-nft_blocks">
+          <div class="item_content">
+            <div class="img__block">
+              <img class="card__img" src="img/live_2.svg" alt="">
+            </div>
+
+            <div class="item_name">
+              <h3>DeGods #663</h3>
+              <span>Current Bid</span>
+            </div>
+
+            <div class="creator-info">
+              <div class="creator-nft_card">
+                <img src="img/DeGods.svg" alt="">
+                <p><span>DeGods</span></p>
+              </div>
+              <div class="nft-card_bid">
+                <p><span>FREE</span></p>
+              </div>
+            </div>
+
+            <div class="nft_timer_block">
+              <div class="nft_sale__timer">
+                <img src="img/fier.svg" alt="">
+                <span class="timer_element" data-target-time="2023-08-16T13:20:00"></span>
+              </div>
+              <div class="nft_bid_click"><a href="">Bid</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hot-nft_blocks">
+          <div class="item_content">
+            <div class="img__block">
+              <img class="card__img" src="img/live_2.svg" alt="">
+            </div>
+
+            <div class="item_name">
+              <h3>DeGods #663</h3>
+              <span>Current Bid</span>
+            </div>
+
+            <div class="creator-info">
+              <div class="creator-nft_card">
+                <img src="img/DeGods.svg" alt="">
+                <p><span>DeGods</span></p>
+              </div>
+              <div class="nft-card_bid">
+                <p><span>FREE</span></p>
+              </div>
+            </div>
+
+            <div class="nft_timer_block">
+              <div class="nft_sale__timer">
+                <img src="img/fier.svg" alt="">
+                <span class="timer_element" data-target-time="2023-08-16T13:20:00"></span>
+              </div>
+              <div class="nft_bid_click"><a href="">Bid</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hot-nft_blocks">
+          <div class="item_content">
+            <div class="img__block">
+              <img class="card__img" src="img/live_2.svg" alt="">
+            </div>
+
+            <div class="item_name">
+              <h3>DeGods #663</h3>
+              <span>Current Bid</span>
+            </div>
+
+            <div class="creator-info">
+              <div class="creator-nft_card">
+                <img src="img/DeGods.svg" alt="">
+                <p><span>DeGods</span></p>
+              </div>
+              <div class="nft-card_bid">
+                <p><span>FREE</span></p>
+              </div>
+            </div>
+
+            <div class="nft_timer_block">
+              <div class="nft_sale__timer">
+                <img src="img/fier.svg" alt="">
+                <span class="timer_element" data-target-time="2023-08-16T13:20:00"></span>
+              </div>
+              <div class="nft_bid_click"><a href="">Bid</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hot-nft_blocks">
+          <div class="item_content">
+            <div class="img__block">
+              <img class="card__img" src="img/live_2.svg" alt="">
+            </div>
+
+            <div class="item_name">
+              <h3>DeGods #663</h3>
+              <span>Current Bid</span>
+            </div>
+
+            <div class="creator-info">
+              <div class="creator-nft_card">
+                <img src="img/DeGods.svg" alt="">
+                <p><span>DeGods</span></p>
+              </div>
+              <div class="nft-card_bid">
+                <p><span>FREE</span></p>
+              </div>
+            </div>
+
+            <div class="nft_timer_block">
+              <div class="nft_sale__timer">
+                <img src="img/fier.svg" alt="">
+                <span class="timer_element" data-target-time="2023-08-16T13:20:00"></span>
+              </div>
+              <div class="nft_bid_click"><a href="">Bid</a></div>
             </div>
           </div>
         </div>
@@ -583,7 +1181,10 @@
     <p class="all-reserver" href="">2023 All Right Reserved</p>
   </footer>
 </body>
+<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
 <script src="https://cdn.ethers.io/lib/ethers-5.4.umd.min.js"></script>
 <script src="./js/wallet.js"></script>
 <script src="./js/countdown.js"></script>
+<script src="./js/tabs.js"></script>
+
 </html>
